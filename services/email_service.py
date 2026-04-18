@@ -9,6 +9,7 @@ load_dotenv()
 EMAIL_USER = os.getenv("EMAIL_USER")
 EMAIL_PASS = os.getenv("EMAIL_PASS")
 
+
 # SEND OTP EMAIL
 def send_otp_email(to_email, otp):
 
@@ -40,66 +41,75 @@ def send_report_email(to_email, result):
     diet_eat = "".join([f"<li>{i}</li>" for i in rec.get("diet", {}).get("foods_to_eat", [])])
     diet_avoid = "".join([f"<li>{i}</li>" for i in rec.get("diet", {}).get("foods_to_avoid", [])])
 
+    # ✅ NEW: HOME REMEDIES
+    home_remedies = "".join([f"<li>{i}</li>" for i in rec.get("home_remedies", [])])
+
+    # PRODUCTS
     products_html = ""
     for p in rec.get("products", []):
-        link = f"https://www.amazon.in/s?k={p.get('name','').replace(' ','+')}"
+        link = p.get("link") or f"https://www.amazon.in/s?k={p.get('name','').replace(' ','+')}"
         products_html += f"""
-        <div style="margin-bottom:10px;">
-            <b>{p.get('name')}</b><br>
+        <div style="background:#f9fafb;padding:12px;border-radius:10px;margin-bottom:10px;border:1px solid #eee;">
+            <b style="color:#111;">{p.get('name')}</b><br>
             <span style="color:#555;">{p.get('reason')}</span><br>
-            <a href="{link}" style="color:#ff4d6d;">View Product</a>
+            <a href="{link}" style="color:#ff4d6d;font-weight:500;text-decoration:none;">View Product →</a>
         </div>
         """
 
+    # 🔥 IMPROVED PREMIUM UI
     html = f"""
     <html>
-    <body style="margin:0;padding:0;font-family:Segoe UI;background:#f4f6f8;">
+    <body style="margin:0;padding:0;font-family:Segoe UI;background:#0f172a;">
 
-    <div style="max-width:600px;margin:auto;background:white;border-radius:12px;overflow:hidden;box-shadow:0 10px 30px rgba(0,0,0,0.1);">
+    <div style="max-width:650px;margin:auto;background:#ffffff;border-radius:16px;overflow:hidden;box-shadow:0 20px 50px rgba(0,0,0,0.3);">
 
         <!-- HEADER -->
-        <div style="background:linear-gradient(135deg,#ff4d6d,#ff758f);padding:20px;color:white;text-align:center;">
-            <h2>CharuFace AI Skin Report</h2>
-            <p>Your personalized skincare insights</p>
+        <div style="background:linear-gradient(135deg,#ff4d6d,#fb7185);padding:25px;color:white;text-align:center;">
+            <h2 style="margin:0;">✨ CharuFace AI Skin Report</h2>
+            <p style="margin:5px 0 0;">Personalized Dermatology Insights</p>
         </div>
 
         <!-- CONTENT -->
-        <div style="padding:20px;color:#333;">
+        <div style="padding:25px;color:#1e293b;">
 
-            <h3>{issue} ({severity})</h3>
+            <h2 style="margin-bottom:5px;">{issue} ({severity})</h2>
             <p><b>Confidence:</b> {confidence}%</p>
-            <p>{rec.get("explanation","")}</p>
+            <p style="line-height:1.6;">{rec.get("explanation","")}</p>
 
-            <hr>
+            <hr style="margin:20px 0;">
 
-            <h3>✨ Ingredients</h3>
+            <h3 style="color:#ff4d6d;">✨ Key Ingredients</h3>
             <ul>{ingredients}</ul>
 
-            <h3>⚠️ Avoid</h3>
+            <h3 style="color:#ef4444;">⚠️ What to Avoid</h3>
             <ul>{avoid}</ul>
 
-            <h3>🧴 Routine</h3>
+            <h3 style="color:#6366f1;">🧴 Skincare Routine</h3>
             <b>Morning</b>
             <ul>{morning}</ul>
 
             <b>Night</b>
             <ul>{night}</ul>
 
-            <h3>🥗 Diet</h3>
+            <!-- ✅ NEW HOME REMEDIES SECTION -->
+            <h3 style="color:#10b981;">🏠 Home Remedies</h3>
+            <ul>{home_remedies}</ul>
+
+            <h3 style="color:#f59e0b;">🥗 Diet Recommendations</h3>
             <b>Eat</b>
             <ul>{diet_eat}</ul>
 
             <b>Avoid</b>
             <ul>{diet_avoid}</ul>
 
-            <h3>🛍 Recommended Products</h3>
+            <h3 style="color:#ec4899;">🛍 Recommended Products</h3>
             {products_html}
 
         </div>
 
         <!-- FOOTER -->
-        <div style="background:#f1f5f9;padding:15px;text-align:center;font-size:12px;color:#666;">
-            Powered by CharuFace AI • Personalized Skincare Assistant
+        <div style="background:#f1f5f9;padding:15px;text-align:center;font-size:12px;color:#64748b;">
+            Powered by CharuFace AI • Smart Skincare Assistant
         </div>
 
     </div>
@@ -121,10 +131,11 @@ def send_report_email(to_email, result):
             server.login(EMAIL_USER, EMAIL_PASS)
             server.sendmail(EMAIL_USER, to_email, msg.as_string())
 
-        print("✅ Email sent successfully")
+        print("Email sent successfully")
 
     except Exception as e:
-        print("❌ Email error:", e)
+        print("Email error:", e)
+
 
 # CORE MAIL FUNCTION
 def send_email(to_email, subject, body):
