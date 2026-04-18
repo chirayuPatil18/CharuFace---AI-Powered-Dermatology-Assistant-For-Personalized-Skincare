@@ -1,0 +1,44 @@
+<h2>CharuFace AI</h2>
+
+<form method="POST" enctype="multipart/form-data">
+Name: <input name="name" required><br>
+Age: <input name="age" type="number" required><br>
+
+Skin Type:
+<select name="skin_type">
+<option>Oily</option>
+<option>Dry</option>
+<option>Combination</option>
+<option>Sensitive</option>
+</select><br>
+
+Allergies:
+<input name="allergies"><br>
+
+Location:
+<input name="location" required><br>
+
+Concern:
+<select name="concern">
+<option>acne</option>
+<option>blackheads</option>
+<option>dryness</option>
+<option>enlarged_pores</option>
+<option>hyperpigmentation</option>
+<option>redness</option>
+</select><br><br>
+
+Left Face: <input type="file" name="left" required><br>
+Center Face: <input type="file" name="center" required><br>
+Right Face: <input type="file" name="right" required><br><br>
+
+<button type="submit">Analyze</button>
+</form>
+
+{% if result %}
+<h3>Result</h3>
+Issue: {{ result.issue }}<br>
+Severity: {{ result.severity }}<br>
+Confidence: {{ result.confidence }}%<br>
+Location: {{ result.location }}
+{% endif %}

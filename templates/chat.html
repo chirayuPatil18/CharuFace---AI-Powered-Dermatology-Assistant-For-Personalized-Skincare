@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>CharuFace AI Chat</title>
+
+<style>
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Segoe UI';
+}
+
+/* 🌈 BACKGROUND */
+body{
+height:100vh;
+background: linear-gradient(135deg,#0f2027,#1c3a44,#2c5364);
+display:flex;
+justify-content:center;
+align-items:center;
+color:white;
+}
+
+/* 🔥 CHAT CONTAINER */
+.chat-container{
+width:420px;
+height:650px;
+background: rgba(255,255,255,0.06);
+border-radius:25px;
+backdrop-filter: blur(25px);
+box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+display:flex;
+flex-direction:column;
+position:relative;
+overflow:hidden;
+}
+
+/* ❌ CLOSE BUTTON */
+.close-btn{
+position:absolute;
+top:15px;
+right:15px;
+width:35px;
+height:35px;
+border-radius:50%;
+background:rgba(255,255,255,0.2);
+display:flex;
+align-items:center;
+justify-content:center;
+cursor:pointer;
+font-size:18px;
+transition:0.3s;
+}
+
+.close-btn:hover{
+background:#ff4d6d;
+}
+
+/* HEADER */
+.chat-header{
+padding:20px;
+font-size:18px;
+font-weight:600;
+border-bottom:1px solid rgba(255,255,255,0.1);
+}
+
+/* CHAT BOX */
+.chat-box{
+flex:1;
+padding:15px;
+overflow-y:auto;
+display:flex;
+flex-direction:column;
+}
+
+/* SCROLLBAR */
+.chat-box::-webkit-scrollbar{
+width:6px;
+}
+.chat-box::-webkit-scrollbar-thumb{
+background:#ff4d6d;
+border-radius:10px;
+}
+
+/* MESSAGES */
+.msg{
+max-width:75%;
+padding:12px 14px;
+margin:8px 0;
+border-radius:15px;
+font-size:14px;
+line-height:1.4;
+}
+
+/* USER */
+.user{
+background: linear-gradient(135deg,#ff4d6d,#ff758f);
+align-self:flex-end;
+color:white;
+border-bottom-right-radius:5px;
+}
+
+/* AI */
+.ai{
+background: rgba(255,255,255,0.12);
+align-self:flex-start;
+border-bottom-left-radius:5px;
+}
+
+/* INPUT AREA */
+.input-area{
+display:flex;
+padding:15px;
+border-top:1px solid rgba(255,255,255,0.1);
+background:rgba(0,0,0,0.2);
+}
+
+/* INPUT */
+input{
+flex:1;
+padding:12px;
+border-radius:12px;
+border:none;
+outline:none;
+background:rgba(255,255,255,0.15);
+color:white;
+}
+
+/* PLACEHOLDER */
+input::placeholder{
+color:#ccc;
+}
+
+/* SEND BUTTON */
+button{
+margin-left:10px;
+padding:12px 16px;
+border-radius:12px;
+background: linear-gradient(135deg,#ff4d6d,#ff758f);
+color:white;
+border:none;
+cursor:pointer;
+transition:0.3s;
+}
+
+button:hover{
+transform:scale(1.05);
+}
+</style>
+
+</head>
+
+<body>
+
+<div class="chat-container">
+
+<!-- CLOSE -->
+<div class="close-btn" onclick="window.location='/result'">✕</div>
+
+<div class="chat-header">💬 CharuFace Assistant</div>
+
+<div class="chat-box" id="chat"></div>
+
+<div class="input-area">
+<input id="msg" placeholder="Ask about your skin...">
+<button onclick="send()">Send</button>
+</div>
+
+</div>
+
+<script>
+
+function addMessage(text, type){
+const div = document.createElement("div");
+div.className = "msg " + type;
+div.innerText = text;
+
+const chat = document.getElementById("chat");
+chat.appendChild(div);
+
+chat.scrollTop = chat.scrollHeight;
+
+// SAVE LOCALLY
+let history = JSON.parse(localStorage.getItem("chat_history") || "[]");
+history.push({text, type});
+localStorage.setItem("chat_history", JSON.stringify(history));
+}
+
+// LOAD CHAT
+window.onload = function(){
+const chat = document.getElementById("chat");
+let history = JSON.parse(localStorage.getItem("chat_history") || "[]");
+
+history.forEach(msg=>{
+const div = document.createElement("div");
+div.className = "msg " + msg.type;
+div.innerText = msg.text;
+chat.appendChild(div);
+});
+
+chat.scrollTop = chat.scrollHeight;
+};
+
+function send(){
+const input = document.getElementById("msg");
+const msg = input.value;
+
+if(!msg.trim()) return;
+
+addMessage(msg, "user");
+
+// GET USER EMAIL
+const email = localStorage.getItem("user_email");
+
+fetch("/chat", {
+method: "POST",
+headers: {"Content-Type":"application/json"},
+body: JSON.stringify({
+    message: msg,
+    email: email
+})
+})
+.then(res => res.json())
+.then(data => addMessage(data.reply,"ai"));
+
+input.value = "";
+}
+</script>
+
+</body>
+</html>

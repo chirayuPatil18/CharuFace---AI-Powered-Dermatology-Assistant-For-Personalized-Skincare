@@ -1,0 +1,63 @@
+# ENV & SECRETS
+.env
+.env.*
+*.env
+
+# PYTHON CACHE
+__pycache__/
+*.pyc
+*.pyo
+
+# VIRTUAL ENV
+venv/
+.venv/
+
+# AI MODELS
+*.pt
+*.pth
+*.onnx
+*.keras
+
+# specific model folders
+models/all-MiniLM-L6-v2/
+models/efficientnet/
+models/yolo/
+
+# TRAINING / DATASETS
+training/dataset/
+yolo_dataset/
+*.cache
+
+# MEMORY (USER DATA)
+memory/
+
+# LOGS / RUNS
+runs/
+logs/
+*.log
+
+# UPLOADS / GENERATED FILES
+uploads/
+static/uploads/
+
+# SYSTEM FILES
+.DS_Store
+Thumbs.db
+
+# IDE / EDITOR
+.vscode/
+.idea/
+
+# OPTIONAL (EVALUATION OUTPUTS)
+evaluation/confusion_matrix.png
+evaluation/classification_report.txt
+
+# AUTH DATA (IMPORTANT)
+auth/users.json
+
+# LOCAL DB
+*.sqlite3
+*.db
+
+# LOCAL CONFIG
+config.local.*

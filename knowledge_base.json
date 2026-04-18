@@ -1,0 +1,217 @@
+[
+{
+"id": "acne_overview",
+"text": "Acne is a chronic inflammatory skin condition caused by clogged pores due to excess oil, dead skin cells, and bacteria. It commonly appears on the face, chest, and back and can range from mild to severe forms including cysts and nodules.",
+"metadata": {"skin_issue": "acne", "section": "overview", "severity": "all"}
+},
+{
+"id": "acne_causes",
+"text": "Acne is caused by excess sebum production, clogged pores, bacterial growth (Cutibacterium acnes), hormonal changes, improper skincare, and genetic factors.",
+"metadata": {"skin_issue": "acne", "section": "causes", "severity": "all"}
+},
+{
+"id": "acne_symptoms",
+"text": "Symptoms of acne include whiteheads, blackheads, papules, pustules, cysts, oily skin, redness, and possible scarring.",
+"metadata": {"skin_issue": "acne", "section": "symptoms", "severity": "all"}
+},
+{
+"id": "acne_triggers",
+"text": "Triggers of acne include high sugar diet, stress, humidity, hormonal imbalance, heavy cosmetics, and poor hygiene.",
+"metadata": {"skin_issue": "acne", "section": "triggers", "severity": "all"}
+},
+{
+"id": "acne_ingredients",
+"text": "Salicylic acid unclogs pores, benzoyl peroxide kills bacteria, niacinamide reduces inflammation, retinoids increase cell turnover, and azelaic acid reduces acne and pigmentation.",
+"metadata": {"skin_issue": "acne", "section": "ingredients", "severity": "all"}
+},
+{
+"id": "acne_avoid",
+"text": "Avoid coconut oil, alcohol-based products, heavy creams, comedogenic ingredients, and fragrances for acne-prone skin.",
+"metadata": {"skin_issue": "acne", "section": "avoid", "severity": "all"}
+},
+{
+"id": "acne_environment",
+"text": "Humidity increases oil production, pollution clogs pores, and high temperature increases sweating and bacterial growth leading to acne.",
+"metadata": {"skin_issue": "acne", "section": "environment", "severity": "all"}
+},
+{
+"id": "acne_environment_recommendation",
+"text": "In humid conditions use oil-free products, in polluted environments use double cleansing, and in hot weather use lightweight skincare.",
+"metadata": {"skin_issue": "acne", "section": "environment_recommendation", "severity": "all"}
+},
+{
+"id": "acne_rules",
+"text": "Use non-comedogenic products, avoid over-washing, do not pop pimples, use sunscreen, and maintain consistent skincare routine.",
+"metadata": {"skin_issue": "acne", "section": "rules", "severity": "all"}
+},
+
+{
+"id": "blackheads_overview",
+"text": "Blackheads are open comedones formed when pores are clogged with oil and dead skin cells and oxidize upon exposure to air.",
+"metadata": {"skin_issue": "blackheads", "section": "overview", "severity": "all"}
+},
+{
+"id": "blackheads_causes",
+"text": "Blackheads are caused by excess oil, clogged pores, dead skin accumulation, hormonal imbalance, and poor cleansing.",
+"metadata": {"skin_issue": "blackheads", "section": "causes", "severity": "all"}
+},
+{
+"id": "blackheads_symptoms",
+"text": "Symptoms include small black spots, rough skin texture, and visible clogged pores mainly in T-zone areas.",
+"metadata": {"skin_issue": "blackheads", "section": "symptoms", "severity": "all"}
+},
+{
+"id": "blackheads_triggers",
+"text": "Triggers include oily skin, pollution, poor exfoliation, and heavy skincare products.",
+"metadata": {"skin_issue": "blackheads", "section": "triggers", "severity": "all"}
+},
+{
+"id": "blackheads_ingredients",
+"text": "Salicylic acid unclogs pores, glycolic acid exfoliates surface skin, clay absorbs oil, and retinoids prevent clogging.",
+"metadata": {"skin_issue": "blackheads", "section": "ingredients", "severity": "all"}
+},
+{
+"id": "blackheads_avoid",
+"text": "Avoid heavy oils, thick creams, and pore-clogging ingredients.",
+"metadata": {"skin_issue": "blackheads", "section": "avoid", "severity": "all"}
+},
+{
+"id": "blackheads_environment",
+"text": "Humidity increases oil, pollution clogs pores, and heat increases sebum production.",
+"metadata": {"skin_issue": "blackheads", "section": "environment", "severity": "all"}
+},
+{
+"id": "blackheads_rules",
+"text": "Exfoliate regularly, use oil-control products, and avoid squeezing blackheads.",
+"metadata": {"skin_issue": "blackheads", "section": "rules", "severity": "all"}
+},
+
+{
+"id": "pigmentation_overview",
+"text": "Hyperpigmentation is the darkening of skin due to excess melanin production caused by sun exposure, inflammation, or hormonal changes.",
+"metadata": {"skin_issue": "pigmentation", "section": "overview", "severity": "all"}
+},
+{
+"id": "pigmentation_causes",
+"text": "Causes include UV exposure, acne scars, hormonal imbalance, and skin inflammation.",
+"metadata": {"skin_issue": "pigmentation", "section": "causes", "severity": "all"}
+},
+{
+"id": "pigmentation_symptoms",
+"text": "Symptoms include dark patches, uneven skin tone, and persistent discoloration.",
+"metadata": {"skin_issue": "pigmentation", "section": "symptoms", "severity": "all"}
+},
+{
+"id": "pigmentation_triggers",
+"text": "Triggers include sun exposure, acne, inflammation, and hormonal changes.",
+"metadata": {"skin_issue": "pigmentation", "section": "triggers", "severity": "all"}
+},
+{
+"id": "pigmentation_ingredients",
+"text": "Vitamin C brightens skin, niacinamide reduces melanin, alpha arbutin lightens spots, and kojic acid reduces pigmentation.",
+"metadata": {"skin_issue": "pigmentation", "section": "ingredients", "severity": "all"}
+},
+{
+"id": "pigmentation_environment",
+"text": "Sunlight worsens pigmentation and pollution increases oxidative stress.",
+"metadata": {"skin_issue": "pigmentation", "section": "environment", "severity": "all"}
+},
+{
+"id": "pigmentation_rules",
+"text": "Use sunscreen daily, avoid sun exposure, and use brightening ingredients consistently.",
+"metadata": {"skin_issue": "pigmentation", "section": "rules", "severity": "all"}
+},
+
+{
+"id": "dryness_overview",
+"text": "Dry skin occurs due to lack of moisture or natural oils leading to rough, flaky, and tight skin.",
+"metadata": {"skin_issue": "dryness", "section": "overview", "severity": "all"}
+},
+{
+"id": "dryness_causes",
+"text": "Causes include low oil production, harsh skincare, cold weather, and aging.",
+"metadata": {"skin_issue": "dryness", "section": "causes", "severity": "all"}
+},
+{
+"id": "dryness_symptoms",
+"text": "Symptoms include flakiness, tightness, rough texture, and irritation.",
+"metadata": {"skin_issue": "dryness", "section": "symptoms", "severity": "all"}
+},
+{
+"id": "dryness_ingredients",
+"text": "Hyaluronic acid hydrates skin, glycerin retains moisture, and ceramides repair skin barrier.",
+"metadata": {"skin_issue": "dryness", "section": "ingredients", "severity": "all"}
+},
+{
+"id": "dryness_environment",
+"text": "Low humidity and cold weather increase dryness and damage skin barrier.",
+"metadata": {"skin_issue": "dryness", "section": "environment", "severity": "all"}
+},
+{
+"id": "dryness_rules",
+"text": "Use gentle cleansers, moisturize frequently, and avoid hot showers.",
+"metadata": {"skin_issue": "dryness", "section": "rules", "severity": "all"}
+},
+
+{
+"id": "redness_overview",
+"text": "Redness is caused by inflammation or irritation and is common in sensitive skin conditions.",
+"metadata": {"skin_issue": "redness", "section": "overview", "severity": "all"}
+},
+{
+"id": "redness_causes",
+"text": "Causes include irritation, allergies, over-exfoliation, and sensitive skin.",
+"metadata": {"skin_issue": "redness", "section": "causes", "severity": "all"}
+},
+{
+"id": "redness_symptoms",
+"text": "Symptoms include red patches, burning sensation, and irritation.",
+"metadata": {"skin_issue": "redness", "section": "symptoms", "severity": "all"}
+},
+{
+"id": "redness_ingredients",
+"text": "Aloe vera soothes skin, niacinamide reduces inflammation, and green tea calms irritation.",
+"metadata": {"skin_issue": "redness", "section": "ingredients", "severity": "all"}
+},
+{
+"id": "redness_environment",
+"text": "Heat and pollution worsen redness and irritation.",
+"metadata": {"skin_issue": "redness", "section": "environment", "severity": "all"}
+},
+{
+"id": "redness_rules",
+"text": "Avoid harsh products, use calming ingredients, and keep skincare routine simple.",
+"metadata": {"skin_issue": "redness", "section": "rules", "severity": "all"}
+},
+
+{
+"id": "pores_overview",
+"text": "Enlarged pores occur due to excess oil, aging, and loss of skin elasticity.",
+"metadata": {"skin_issue": "pores", "section": "overview", "severity": "all"}
+},
+{
+"id": "pores_causes",
+"text": "Causes include oily skin, sun damage, and collagen loss.",
+"metadata": {"skin_issue": "pores", "section": "causes", "severity": "all"}
+},
+{
+"id": "pores_symptoms",
+"text": "Symptoms include visible pores and uneven skin texture.",
+"metadata": {"skin_issue": "pores", "section": "symptoms", "severity": "all"}
+},
+{
+"id": "pores_ingredients",
+"text": "Niacinamide reduces pore size, retinol improves elasticity, and salicylic acid cleans pores.",
+"metadata": {"skin_issue": "pores", "section": "ingredients", "severity": "all"}
+},
+{
+"id": "pores_environment",
+"text": "Humidity increases oil and pollution clogs pores.",
+"metadata": {"skin_issue": "pores", "section": "environment", "severity": "all"}
+},
+{
+"id": "pores_rules",
+"text": "Use lightweight products, cleanse regularly, and avoid heavy oils.",
+"metadata": {"skin_issue": "pores", "section": "rules", "severity": "all"}
+}
+]
